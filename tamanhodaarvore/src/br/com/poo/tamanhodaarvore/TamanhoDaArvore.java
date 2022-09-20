@@ -1,0 +1,53 @@
+package br.com.poo.tamanhodaarvore;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class TamanhoDaArvore {
+
+	public static void main(String[] args) {
+		TamanhoDaArvore.Inicio();
+	}
+
+	public static void Inicio() {
+
+		Scanner ler = new Scanner(System.in);
+		int tamanho;
+
+		try {
+			System.out.println("Qual o tamanho da árvore?");
+			tamanho = ler.nextInt();
+
+			String j = "*";
+			for (int i = 1; i <= tamanho; i++) {
+				for (int k = i; k <= tamanho; k++) {
+
+					System.out.print(" ");
+
+				}
+				System.out.println(j);
+				j += "**";
+			}
+
+			for (int i = 0; i < 4; i++) {
+				for (int k = 0; k <= tamanho - 3; k++) {
+
+					System.out.print(" ");
+				}
+				System.out.println("*****");
+			}
+			for (int i = 0; i <= 1; i++) {
+				for (int k = 0; k <= tamanho - 5; k++) {
+					System.out.print(" ");
+				}
+				System.out.println("*********");
+			}
+			System.out.println("'\'_______/");
+		} catch (InputMismatchException e) {
+			System.out.println("Valor inválido!!");
+			Inicio();
+		}
+		ler.close();
+
+	}
+}

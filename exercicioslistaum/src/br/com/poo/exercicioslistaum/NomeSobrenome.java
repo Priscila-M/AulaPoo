@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class NomeSobrenome {
 
 	public static void main(String[] args) {
-		
-		Scanner leia = new Scanner (System.in);
+
+		Scanner leia = new Scanner(System.in);
 		String nome, sobrenome;
-		
+
 		System.out.println("Qual o seu nome?");
 		nome = leia.nextLine();
 		System.out.println("E sobrenome?");

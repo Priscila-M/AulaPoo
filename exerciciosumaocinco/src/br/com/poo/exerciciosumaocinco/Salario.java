@@ -5,11 +5,10 @@ import java.util.Scanner;
 public class Salario {
 
 	public static void main(String[] args) {
-	
-		Scanner leia = new Scanner (System.in);
+
+		Scanner leia = new Scanner(System.in);
 		int horaNormal, horaExtra, resultado, resultado2, salarioAnual;
 		String nome;
-		
 
 		System.out.println("Funcionário: ");
 		nome = leia.nextLine();

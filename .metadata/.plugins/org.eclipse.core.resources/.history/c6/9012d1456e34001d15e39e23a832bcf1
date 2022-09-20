@@ -1,0 +1,117 @@
+package br.com.poo.copia;
+
+public class MenuCliente {
+	static Scanner sc = new Scanner(System.in);
+
+	public static void menuInicialCliente() {
+
+		System.out.println("---Informe a opção desejada---\n" + "|   Opção 1 - Movimentações na Conta\n"
+				+ "|   Opção 2 - Relatórios\n" + "|   Opção 3 - Encerrar");
+
+		int operacaoConta = sc.nextInt();
+
+		switch (operacaoConta) {
+		case 1:
+			movimentacaoConta();
+			break;
+		case 2:	
+			relatorios();
+			break;
+		case 3:
+			MenuInterativo.menuInicial();
+			break;
+		default:
+			System.out.println("Operação inválida");
+			menuInicialCliente();
+			break;
+		}
+		sc.close();
+
+	}
+
+	public static void movimentacaoConta() {
+		System.out.println("--- Selecione a operação ---\n" + "|   Opção 1 - Saque\n" + "|   Opção 2 - Deposito\n"
+				+ "|   Opção 3 - Transferência\n" + "|   Opção 4 - Voltar ao menu inicial\n"
+				+ "|   Opção 5 - Encerrar");
+
+		int operacaoConta = sc.nextInt();
+
+		switch (operacaoConta) {
+		case 1:
+			System.out.println("Informe o valor do Saque: ");
+			double valorSaque = sc.nextDouble();
+			Conta.sacar(valorSaque);
+			System.out.println("Deseja realizar outra operação?\n" + "Opção 1 - Sim\n" + "Opção 2 - Não");
+			int operacaoSaque = sc.nextInt();
+			if (operacaoSaque == 1) {
+				menuInicialCliente();
+			} else {
+				MenuInterativo.menuInicial();
+			}
+			break;
+		case 2:
+			System.out.println("Informe o valor do deposito: ");
+			double valorDeposito = sc.nextDouble();
+			Conta.depositar(valorDeposito);
+			System.out.println("Deseja realizar outra operação?\n" + "Opção 1 - Sim" + "Opção 2 - Não");
+			int operacaoDeposito = sc.nextInt();
+			if (operacaoDeposito == 1) {
+				menuInicialCliente();
+			} else {
+				MenuInterativo.menuInicial();
+			}
+			break;
+		case 3:
+			System.out.println("Informe a conta destinatária: ");
+			int contaDestino = sc.nextInt();
+			System.out.println("Informe o valor da transferência");
+			double valorTransfer = sc.nextDouble();
+			// Conta.transferir(contaDestino, valorTransfer);
+			break;
+		case 4:
+			menuInicialCliente();
+			break;
+		case 5:
+			MenuInterativo.menuInicial();
+			break;
+		default:
+			System.out.println("Operação invalida ");
+			movimentacaoConta();
+			break;
+		}
+		sc.close();
+	}
+
+	public static void relatorios() {
+		System.out.println("--- Selecione a operação ---\n" + "|   Opção 1 - Saldo\n"
+				+ "|   Opção 2 - Relatório de Tributação (Conta Corrente)\n"
+				+ "|   Opção 3 - Relatório de Rendimento (Conta Poupança)\n" + "|   Opção 4 - Voltar ao menu inicial\n"
+				+ "|   Opção 5 - Encerrar");
+
+		int operacaoConta = sc.nextInt();
+
+		switch (operacaoConta) {
+		case 1:
+			System.out.println("Saldo: R$ " + Conta.getSaldo());
+			break;
+		case 2:
+			System.out.println("Entrou em rel. tributacao");
+			break;
+		case 3:
+			System.out.println("Entrou em rel. rendimento");
+			break;
+		case 4:
+			menuInicialCliente();
+			break;
+		case 5:
+			MenuInterativo.menuInicial();
+			break;
+		default:
+			System.out.println("Operação invalida ");
+			movimentacaoConta();
+			break;
+
+		}
+		sc.close();
+	}
+}

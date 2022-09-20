@@ -1,0 +1,46 @@
+package br.com.poo.tamanhodaarvore;
+
+import java.util.Scanner;
+
+public class ArvoreComArrey {
+
+	public static void main(String[] args) {
+		int tamanho;
+		int[] arreyInt;
+
+		Scanner ler = new Scanner(System.in);
+
+		System.out.println("Digite o tamanho da árvore: ");
+		tamanho = ler.nextInt();
+		arreyInt = new int[tamanho];
+
+		String k = "*";
+		for (int i = 0; i < tamanho; i++) {
+			arreyInt[i] = i * tamanho;
+			for (int j = 0; j < tamanho; j++) {
+				System.out.print(" ");
+				arreyInt[i] = i * tamanho;
+			}
+			System.out.println(k);
+			k += "**";
+			System.out.println(k);
+		}
+
+//		System.out.println("**");
+//		k += "**";
+//		tamanho++;
+//		 k += "**";
+//		for(int i = 0; i < tamanho; i++) {
+//             k+= "**";
+////			arreyInt[i] = i * tamanho;
+//			for(int j = 0; j < tamanho; j++) {
+//				arreyInt[j] = j * tamanho;
+//				System.out.print("");
+//			}
+//
+//		 }
+
+		ler.close();
+	}
+
+}
